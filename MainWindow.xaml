@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Szilagyi_Edward_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts Factory" Height="400" Width="700" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Virtual Doughnuts Factory" Height="400" Width="700" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" Loaded="frmMain_Loaded">
     <Grid Margin="-10,0,10,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="83*"/>
@@ -53,11 +53,15 @@ Width="131" Margin="10,0,0,0">
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make" FontWeight="Normal">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed"
+                                  Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar"
+                        IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop"
+                      Click="stopToolStripMenuItem_Click"/>
             </MenuItem>
         </Menu>
     </Grid>
